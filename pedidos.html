@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria - Pedidos</title>
+    <link rel="stylesheet" href="assets/css/pedidos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, input[type="number"], textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #eca442;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #ca2421;
+        }
+        .order-container {
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h1>Faça seu Pedido</h1>
+        <form action="gravaPedidos.php" method="post">
+            <label for="pizza-flavor">Sabor da Pizza:</label>
+            <select id="pizza-flavor" name="pizza-flavor" required>
+                <option value="">Selecione...</option>
+                <option value="marguerita">Marguerita</option>
+                <option value="calabresa">Calabresa</option>
+                <option value="quatro-queijos">Quatro Queijos</option>
+                <option value="frango-catupiry">Frango com Catupiry</option>
+            </select>
+            <label for="pizza-quantity">Quantidade:</label>
+            <input type="number" id="pizza-quantity" name="pizza-quantity" min="1" value="1" required>
+            <label for="beverage">Vai uma bebida?</label>
+            <select id="beverage" name="beverage">
+                <option value="">Não, obrigado!</option>
+                <option value="refrigerante">Refrigerante</option>
+                <option value="agua">Água</option>
+                <option value="suco">Suco</option>
+                <option value="cerveja">Cerveja</option>
+            </select>
+            <button type="submit">Fazer Pedido</button>
+        </form>
+    </div>
+</body>
+</html>
